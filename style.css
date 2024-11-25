@@ -1,0 +1,11 @@
+.scale {
+  transition: all 0.3s;
+}
+
+.scale:hover {
+  scale: 1.1;
+}
+
+.scale:active {
+  scale: 1;
+}
