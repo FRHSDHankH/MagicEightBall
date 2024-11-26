@@ -1,42 +1,61 @@
-//Get username
+//Putting variables for getElementById for easy stuff
+let responseImg = document.getElementById('responseImg')
+let responseText = document.getElementById('responseText')
+let greeting = document.getElementById('greeting')
+
+//Get and insert username
 let userName = prompt("Hello, what is your name?");
-userName ? (document.getElementById("greeting").innerText = `Hello, ${userName}!`) : (document.getElementById("greeting").innerText = "Hello, stranger!");
+userName
+  ? (greeting.innerText = `Hello, ${userName}!`)
+  : (greeting.innerText = "Hello, stranger!");
 
 //Button function
-function shakeMagic8Ball() {
+function shakeBall() {
   //Get Question
-  let question = prompt("Ask a question!");
-  
+  let userQuestion = prompt("Ask a question!");
+
   //DO NOT TOUCH THIS CODE!
   const randomNumber = Math.floor(Math.random() * 8);
 
   let eightBall;
+  let imageChoice;
 
   switch (randomNumber) {
     case 0:
-      eightBall = "It is certain";
+      eightBall = "it is certain";
+      imageChoice = 'imgs/Certain.jpg'
       break;
     case 1:
-      eightBall = "It is decidedly so";
+      eightBall = "it is decidedly so";
+      imageChoice = 'imgs/Decided.jpg'
       break;
     case 2:
-      eightBall = "Reply hazy try again";
+      eightBall = "reply hazy try again";
+      imageChoice = 'imgs/Later.webp'
       break;
     case 3:
-      eightBall = "Cannot predict now";
+      eightBall = "cannot predict now";
+      imageChoice = 'imgs/Predict.png'
       break;
     case 4:
-      eightBall = "Do not count on it";
+      eightBall = "do not count on it";
+      imageChoice = 'imgs/count.png'
       break;
     case 5:
-      eightBall = "My sources say no";
+      eightBall = "my sources say no";
+      imageChoice = 'imgs/sources.jpg'
       break;
     case 6:
-      eightBall = "Outlook not so good";
+      eightBall = "outlook not so good";
+      imageChoice = 'imgs/outlook.jpg'
       break;
     case 7:
-      eightBall = "Signs point to yes";
+      eightBall = "signs point to yes";
+      imageChoice = 'imgs/sign.jpg'
       break;
   }
-  document.getElementById("responseText").innerHTML = eightBall;
+
+  userName ? responseText.innerText = `${userName} has asked ${userQuestion}. The Magic 8 Ball says... ${eightBall}.` : responseText.innerText = `Stranger has asked ${userQuestion}. The Magic 8 Ball says... ${eightBall}.`
+
+  responseImg.src = imageChoice;
 }
