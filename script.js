@@ -51,7 +51,7 @@ function shakeBall() {
       break;
     case 7:
       eightBall = "signs point to yes";
-      imageChoice = 'imgs/sign.jpg'
+      imageChoice = 'imgs/signs.jpg'
       break;
   }
 
